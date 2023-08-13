@@ -1,0 +1,25 @@
+From 31793ebdd2fcf7ff627abbf188549646eb3e323a Mon Sep 17 00:00:00 2001
+From: nerdopolis turfwalker <bluescreenavenger@gmail.com>
+Date: Thu, 3 Aug 2023 18:46:36 -0400
+Subject: [PATCH] On Wayland, always apply the gradient to the tilebar
+
+---
+ kdecoration/oxygendecoration.cpp | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/kdecoration/oxygendecoration.cpp b/kdecoration/oxygendecoration.cpp
+index 83066fa4..66d01bed 100644
+--- a/kdecoration/oxygendecoration.cpp
++++ b/kdecoration/oxygendecoration.cpp
+@@ -593,7 +593,7 @@ void Decoration::renderWindowBackground(QPainter *painter, const QRect &clipRect
+         innerClientRect.adjust(1, 1, -1, -1);
+     }
+ 
+-    if (SettingsProvider::self()->helper()->hasBackgroundGradient(c->windowId())) {
++    if (SettingsProvider::self()->helper()->hasBackgroundGradient(c->windowId()) || !QX11Info::isPlatformX11()) {
+         SettingsProvider::self()->helper()->renderWindowBackground(painter, clipRect, innerClientRect, titleBarColor(palette), borderTop() - 24);
+ 
+     } else {
+-- 
+GitLab
+
