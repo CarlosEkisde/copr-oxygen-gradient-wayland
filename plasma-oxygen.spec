@@ -19,6 +19,7 @@ URL:     https://cgit.kde.org/%{base_name}.git
 %global stable stable
 %endif
 Source0: http://download.kde.org/%{stable}/plasma/%{version}/%{base_name}-%{version}.tar.xz
+Patch0: https://raw.githubusercontent.com/CarlosEkisde/copr-oxygen-gradient-wayland/main/showgradientinwayland.patch
 
 # filter plugins
 %global __provides_exclude_from ^(%{_kde4_libdir}/kde4/.*\\.so|%{_kf5_qtplugindir}/.*\\.so)$
