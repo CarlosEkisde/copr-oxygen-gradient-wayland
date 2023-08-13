@@ -18,7 +18,7 @@ URL:     https://cgit.kde.org/%{base_name}.git
 %global majmin_ver %(echo %{version} | cut -d. -f1,2)
 %global stable stable
 %endif
-Source0: http://download.kde.org/%{stable}/plasma/%{version}/%{base_name}-%{version}.tar.xz
+Source0: http://download.kde.org/%{stable}/plasma/5.27.7/%{base_name}-5.27.7.tar.xz
 Patch0: https://raw.githubusercontent.com/CarlosEkisde/copr-oxygen-gradient-wayland/main/showgradientinwayland.patch
 
 # filter plugins
